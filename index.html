@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Protocol H-90 — A 90-day intervention for Hashimoto’s</title>
+  <meta name="description" content="A clinical-style briefing on an elimination diet and nutrient protocol for Hashimoto’s when thyroid hormone is not an option." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1b1712;
+      --ink-soft: #4a433a;
+      --paper: #f4efe6;
+      --paper-2: #ebe4d6;
+      --cream: #faf7f1;
+      --navy: #1c2836;
+      --navy-2: #243447;
+      --copper: #9a6b3f;
+      --copper-2: #c4a574;
+      --wine: #7a2e2e;
+      --line: rgba(27, 23, 18, 0.12);
+      --ok: #2f5d3a;
+      --shadow: 0 24px 60px rgba(28, 40, 54, 0.12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Outfit, system-ui, sans-serif;
+      font-weight: 400;
+      line-height: 1.55;
+      letter-spacing: 0.01em;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .wrap-narrow { width: min(760px, calc(100% - 40px)); margin: 0 auto; }
+
+    nav {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(244, 239, 230, 0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav .bar {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px; width: min(1120px, calc(100% - 40px)); margin: 0 auto;
+      gap: 16px;
+    }
+    .brand {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 22px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .nav-links a { text-decoration: none; color: var(--ink-soft); }
+    .nav-links a:hover { color: var(--ink); }
+    .cta {
+      background: var(--navy); color: var(--cream); text-decoration: none;
+      padding: 10px 16px; border-radius: 999px; font-size: 13px; letter-spacing: 0.06em;
+      text-transform: uppercase; white-space: nowrap;
+    }
+    .cta:hover { background: #141c27; }
+    .cta.gold { background: var(--copper); color: #fff; }
+
+    .hero {
+      position: relative; min-height: 92vh;
+      display: grid; align-items: end;
+      color: var(--cream);
+      background: #120e0b center/cover no-repeat;
+      background-image: linear-gradient(180deg, rgba(18,14,11,.25) 0%, rgba(18,14,11,.55) 45%, rgba(18,14,11,.88) 100%), url("assets/hero.jpg");
+    }
+    .hero-inner { width: min(1120px, calc(100% - 40px)); margin: 0 auto; padding: 80px 0 64px; }
+    .kicker {
+      font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--copper-2); margin: 0 0 18px;
+    }
+    h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 500; font-size: clamp(40px, 7vw, 84px);
+      line-height: 0.95; letter-spacing: -0.03em; margin: 0 0 22px;
+    }
+    .lede {
+      max-width: 640px; font-size: 19px; color: rgba(250,247,241,.86); margin: 0 0 32px;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .meta-row {
+      display: flex; flex-wrap: wrap; gap: 28px; margin-top: 48px;
+      padding-top: 22px; border-top: 1px solid rgba(250,247,241,.18);
+      font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(250,247,241,.7);
+    }
+
+    section { padding: 88px 0; }
+    h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 500; font-size: clamp(32px, 4.4vw, 52px);
+      line-height: 1.05; letter-spacing: -0.025em; margin: 0 0 18px;
+    }
+    h3 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 500; font-size: 26px; margin: 0 0 10px;
+    }
+    p { margin: 0 0 16px; color: var(--ink-soft); }
+    .eyebrow {
+      font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--copper); margin: 0 0 12px;
+    }
+
+    .brief { background: var(--cream); }
+    .brief p { font-size: 20px; line-height: 1.5; color: var(--ink); }
+    .brief .pull {
+      font-family: Fraunces, Georgia, serif; font-size: clamp(26px, 3vw, 36px);
+      line-height: 1.25; color: var(--navy); margin: 28px 0 0;
+    }
+
+    .navy { background: var(--navy); color: var(--cream); }
+    .navy p, .navy li { color: rgba(250,247,241,.78); }
+    .navy h2, .navy h3 { color: var(--cream); }
+
+    .grid-3, .grid-2, .grid-4 {
+      display: grid; gap: 18px; margin-top: 36px;
+    }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .card {
+      background: var(--cream); border: 1px solid var(--line);
+      border-radius: 18px; padding: 24px;
+    }
+    .navy .card { background: var(--navy-2); border-color: rgba(250,247,241,.08); }
+    .stat {
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(36px, 4vw, 48px); line-height: 1; color: var(--copper);
+      margin: 0 0 8px;
+    }
+    .navy .stat { color: var(--copper-2); }
+    .card small { display: block; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 10px; }
+    .navy .card small { color: rgba(250,247,241,.55); }
+    .card p { margin: 0; font-size: 15px; }
+
+    .trial {
+      display: grid; grid-template-columns: 1.1fr .9fr; gap: 18px; margin-top: 22px;
+    }
+    .trial article {
+      background: var(--cream); border-radius: 18px; padding: 26px; border: 1px solid var(--line);
+    }
+    .badge {
+      display: inline-block; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      border: 1px solid var(--copper); color: var(--copper); padding: 4px 8px; border-radius: 999px; margin-bottom: 12px;
+    }
+    .bars { margin: 18px 0 0; }
+    .bar { margin: 0 0 12px; }
+    .bar span { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; }
+    .track { height: 8px; background: #e6dece; border-radius: 99px; overflow: hidden; }
+    .fill { height: 100%; background: linear-gradient(90deg, var(--wine), var(--copper)); border-radius: 99px; }
+    .note { font-size: 13px; color: var(--ink-soft); margin-top: 14px; }
+
+    .split {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    }
+    .photo {
+      border-radius: 22px; overflow: hidden; box-shadow: var(--shadow);
+      aspect-ratio: 4/3; object-fit: cover; width: 100%;
+    }
+
+    table {
+      width: 100%; border-collapse: collapse; margin-top: 18px;
+      background: var(--cream); border-radius: 16px; overflow: hidden;
+    }
+    th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 15px; }
+    th { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper); font-weight: 500; }
+    tr:last-child td { border-bottom: 0; }
+
+    .menu {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px;
+    }
+    .meal { background: var(--cream); border-radius: 16px; padding: 20px; border: 1px solid var(--line); }
+    .meal h4 { margin: 0 0 8px; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper); font-weight: 500; }
+    .meal p { margin: 0; }
+
+    .steps { counter-reset: step; display: grid; gap: 14px; margin-top: 24px; }
+    .step {
+      display: grid; grid-template-columns: 56px 1fr; gap: 16px; align-items: start;
+      background: var(--cream); border-radius: 16px; padding: 18px 20px; border: 1px solid var(--line);
+    }
+    .step::before {
+      counter-increment: step; content: counter(step);
+      font-family: Fraunces, Georgia, serif; font-size: 28px; color: var(--copper);
+    }
+
+    .ask {
+      background:
+        linear-gradient(180deg, rgba(28,40,54,.55), rgba(28,40,54,.88)),
+        url("assets/fasting.jpg") center/cover no-repeat;
+      color: var(--cream); min-height: 70vh; display: grid; align-items: center;
+    }
+    .ask h2, .ask p { color: var(--cream); }
+    .fine {
+      font-size: 13px; color: rgba(250,247,241,.7); margin-top: 22px;
+    }
+
+    footer {
+      background: #120e0b; color: rgba(250,247,241,.62); padding: 36px 0 48px; font-size: 13px;
+    }
+    footer strong { color: var(--cream); font-weight: 500; }
+
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .grid-3, .grid-2, .grid-4, .trial, .split, .menu { grid-template-columns: 1fr; }
+      section { padding: 64px 0; }
+      .hero { min-height: 88vh; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="bar">
+      <a class="brand" href="#top">Protocol H-90</a>
+      <div class="nav-links">
+        <a href="#readout">The data</a>
+        <a href="#why">Why now</a>
+        <a href="#plan">The plan</a>
+        <a href="#labs">Her labs</a>
+      </div>
+      <a class="cta" href="#ask">The 90-day ask</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <p class="kicker">A briefing for one woman · Hashimoto’s · no hormone replacement</p>
+      <h1>The pill is not<br>the only intervention.</h1>
+      <p class="lede">If she cannot take thyroid hormone, the standard story ends. This one does not. A meat-based elimination diet plus methylated nutrients is the cleanest way we have to quiet the attack, drop weight, and give her remaining thyroid a chance to work.</p>
+      <div class="hero-actions">
+        <a class="cta gold" href="#readout">See the published readout</a>
+        <a class="cta" href="#plan">Open the 90-day plan</a>
+      </div>
+      <div class="meta-row">
+        <span>Primary aim: lower the immune attack</span>
+        <span>Secondary: fat loss, energy, inflammation</span>
+        <span>Duration: 90 days, then labs</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="brief">
+    <div class="wrap-narrow">
+      <p class="eyebrow">The situation</p>
+      <h2>She was given a diagnosis and a prescription she cannot take.</h2>
+      <p>That is not a character flaw. It is a medical corner. Traditional care for Hashimoto’s is almost entirely hormone replacement. When the pill is off the table, too many offices shrug and monitor the wreckage.</p>
+      <p>Hashimoto’s is a real immune attack on the thyroid. The useful claim is not that “autoimmune disease isn’t real.” It is that the attack has causes: a leaky gut, gluten and dairy looking like thyroid tissue to the immune system, empty nutrient tanks, high insulin, body fat acting like an immune organ. Those are things a person can change without a prescription.</p>
+      <p class="pull">This is not a religion. It is a 90-day clinical trial she runs on herself — with labs at both ends.</p>
+    </div>
+  </section>
+
+  <section class="navy" id="readout">
+    <div class="wrap">
+      <p class="eyebrow">The readout · published human data</p>
+      <h2>If this were a drug, these would be the slides.</h2>
+      <p>There is no randomized “carnivore for Hashimoto’s” megatrial. There is something more interesting: every time researchers pulled the same foods carnivore removes — gluten, dairy, grains, seed oils, sugar — the attack markers moved. Carnivore is those trials, run tighter.</p>
+
+      <div class="grid-4">
+        <div class="card">
+          <div class="stat">−44%</div>
+          <small>TPO antibodies · 21 days</small>
+          <p>Esposito 2016. 180 overweight adults with Hashimoto’s on a meat-forward, no-gluten, no-dairy diet.</p>
+        </div>
+        <div class="card">
+          <div class="stat">−57%</div>
+          <small>Microsomal antibodies</small>
+          <p>Same trial. Control group on a normal low-calorie diet: antibodies went <em>up</em>. Weight loss alone did not do this.</p>
+        </div>
+        <div class="card">
+          <div class="stat">211→89</div>
+          <small>TPO · 6 months low-carb</small>
+          <p>Huang 2024. MRI also showed less swelling in the gland. Normal-diet group: no change.</p>
+        </div>
+        <div class="card">
+          <div class="stat">92→29</div>
+          <small>Symptom score · 10 weeks</small>
+          <p>Abbott 2019, Autoimmune Protocol. People felt dramatically better before antibodies even moved.</p>
+        </div>
+      </div>
+
+      <div class="trial">
+        <article>
+          <span class="badge">Closest to her case</span>
+          <h3>Women. Hashimoto’s. No thyroid medication.</h3>
+          <p>Krysiak 2019 put 34 women with Hashimoto’s on gluten-free vs usual diet for six months. None of them were taking thyroid hormone. That is her lane.</p>
+          <div class="bars">
+            <div class="bar">
+              <span><strong>Gluten-free</strong> TPO fell ~200 U/mL</span>
+              <div class="track"><div class="fill" style="width:78%"></div></div>
+            </div>
+            <div class="bar">
+              <span><strong>Usual diet</strong> TPO rose ~29 U/mL</span>
+              <div class="track"><div class="fill" style="width:18%"></div></div>
+            </div>
+          </div>
+          <p class="note">Carnivore removes gluten automatically. It also removes dairy, the second most common cross-reactor.</p>
+        </article>
+        <article>
+          <span class="badge">Selenium · the thyroid mineral</span>
+          <h3>One capsule. Repeated in trials.</h3>
+          <p>The thyroid holds more selenium than any other organ. At 200 mcg/day, antibody drops of about 40% show up across randomized trials. In Gärtner 2002, one in four patients normalized antibodies completely.</p>
+          <p>2024 meta-analyses still point the same direction. This is not Instagram. This is the strongest single supplement in the Hashimoto’s literature.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Why her doctor never wrote this down</p>
+        <h2>It is not that the data is secret. It is that steak cannot be patented.</h2>
+        <p>Most physicians were trained to replace a missing hormone. They were not trained to hunt the reason the immune system started firing. Nutrition in medical school is still measured in hours, not years. Guidelines move when a company funds a thousand-person trial. Nobody funds a thousand-person trial of ribeye.</p>
+        <p>That is the honest version. Some offices are also slow because a quiet patient on a refill is simpler than a 45-minute conversation about food. The doctors who have actually read this literature — metabolic, functional, a growing group of endocrinology contrarians — already use elimination diets. They are not on the fringe. They are ahead of the guideline cycle.</p>
+        <p>She does not need her doctor’s permission to eat meat and salt for 90 days. She does need a doctor willing to draw the labs. That is a reasonable ask.</p>
+      </div>
+      <img class="photo" src="assets/protocol.jpg" alt="A simple plate: steak, eggs, salt." />
+    </div>
+  </section>
+
+  <section class="navy">
+    <div class="wrap">
+      <p class="eyebrow">Mechanism · Fasano’s triad</p>
+      <h2>Autoimmunity needs three things at once. She can change two of them.</h2>
+      <div class="grid-3">
+        <div class="card">
+          <small>01 · Genes</small>
+          <h3>Locked</h3>
+          <p>She has the hardware. That is not a life sentence. Genes load the gun. They do not have to pull the trigger every day for the rest of her life.</p>
+        </div>
+        <div class="card">
+          <small>02 · The trigger</small>
+          <h3>Removable</h3>
+          <p>Gluten peptides look like thyroid tissue. Dairy often does too. Ultra-processed food, seed oils, and blood-sugar spikes keep the alarm on. Carnivore deletes the list in one move.</p>
+        </div>
+        <div class="card">
+          <small>03 · Leaky gut</small>
+          <h3>Closeable</h3>
+          <p>Harvard’s Alessio Fasano: every autoimmune patient has intestinal permeability. Take the irritants out, feed the gut nothing it has to argue with, and the third leg of the stool can fall.</p>
+        </div>
+      </div>
+      <p style="margin-top:28px;max-width:760px">Gary Brecka is right that T4 must become T3 outside the thyroid, and that conversion needs selenium, zinc, iron, and methylated B vitamins — not a grocery-store multi full of folic acid. He overstates it when it sounds like the disease is imaginary. The antibodies are real. The cause is still worth hunting. That hunt is this protocol.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Weight is not cosmetic here</p>
+      <h2>Fat tissue is an immune organ. Losing it is part of treating the gland.</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="stat">27.2→24.3</div>
+          <small>Median BMI · carnivore survey</small>
+          <p>Lennerz 2021, Harvard / Boston Children’s. 2,029 adults. 95% said overall health improved. This is self-report, not a Hashimoto’s trial — and still the largest modern meat-only dataset.</p>
+        </div>
+        <div class="card">
+          <div class="stat">High protein</div>
+          <small>The most filling macronutrient</small>
+          <p>Insulin falls when carbohydrates fall. Cravings fall when snack food does not exist. She will not need a calorie app. She will need fatty cuts and salt so her T3 does not crash.</p>
+        </div>
+        <div class="card">
+          <div class="stat">Same plan</div>
+          <small>Thyroid + scale, one protocol</small>
+          <p>Low thyroid plus high insulin is the hardest weight-loss pairing in medicine. This diet is aimed at both at once. That is why it is the baseline, not a side quest.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brief">
+    <div class="wrap split">
+      <img class="photo" src="assets/fasting.jpg" alt="Morning water and salt." />
+      <div>
+        <p class="eyebrow">Fasting · after she is eating enough</p>
+        <h2>Do not starve a broken thyroid. Time the meals later.</h2>
+        <p>Fasting is real: lower insulin, a quieter gut, autophagy. It is also easy to do badly when thyroid hormone is already low. Week 1 is not a fast. Week 1 is meat, salt, water, and sleep.</p>
+        <p>After two weeks, if energy is better: finish dinner, skip the evening grazing, eat again late morning. That is 14–16 hours. Water, salt, black coffee. No 72-hour water fasts until a clinician has seen her labs and she is clearly adapting.</p>
+        <p>If free T3 is low and reverse T3 is high, fasting waits. Calories and fat come first. Conversion needs fuel.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="plan">
+    <div class="wrap">
+      <p class="eyebrow">Protocol H-90</p>
+      <h2>What she actually does.</h2>
+      <div class="steps">
+        <div class="step">
+          <div>
+            <h3>Week 0 — draw the line</h3>
+            <p>Morning fasting labs. Photos, waist, weight. A 1–10 score for energy, brain fog, bloating, joints, mood, cold, hair. Buy food and four supplements. Ask one doctor to watch the labs — not to approve the menu.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h3>Days 1–30 — the elimination</h3>
+            <p>Beef, lamb, fatty fish, salt, water. Eggs if they sit well. Butter or tallow. Liver once or twice a week if she can. Nothing else. No gluten, no cheese, no “keto snacks,” no plants, no alcohol. Eat until full. Two meals is enough.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h3>Days 31–90 — stay on the protocol</h3>
+            <p>Same food. Recheck labs at week 8–12. Early wins are usually bloating, cravings, sleep, and clothes. Antibodies can take the whole 90 days. Do not quit at week 4 because TPO is still high.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h3>After day 90 — decide with data</h3>
+            <p>Stay carnivore, or add one food every 5–7 days. Never add gluten back first. She will know her three flare foods instead of fearing every aisle.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu">
+        <div class="meal">
+          <h4>Breakfast, or skip it</h4>
+          <p>3–4 eggs in butter and leftover steak. Or just coffee with a pinch of salt if she is already doing 16:8. No “just a bagel.”</p>
+        </div>
+        <div class="meal">
+          <h4>Lunch</h4>
+          <p>1–1.5 lb 80/20 ground beef, smashed in a pan, salted like she means it. Optional: a can of sardines if beef is tired.</p>
+        </div>
+        <div class="meal">
+          <h4>Dinner</h4>
+          <p>Ribeye, chuck roast, lamb shoulder, or salmon. Fatty. A mug of salted bone broth if she wants something warm.</p>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr><th>On the plate</th><th>Off the plate</th><th>On the counter</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ribeye, 80/20 beef, lamb, salmon, sardines, eggs if tolerated, butter, tallow, salt, water, black coffee</td>
+            <td>Gluten, bread, pasta, rice, fruit, vegetables, cheese, milk, seed oils, sugar, soda, “keto” bars, alcohol, sweeteners if they stall her</td>
+            <td>Methylated multi (5-MTHF + methyl-B12, not folic acid). Selenium 200 mcg. Vitamin D3 + K2. Magnesium glycinate. Electrolytes.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">Lean chicken-breast dieting is how people feel worse and blame the thyroid. Fat and salt are the protocol, not a cheat.</p>
+    </div>
+  </section>
+
+  <section class="navy" id="labs">
+    <div class="wrap">
+      <p class="eyebrow">If we had her bloodwork</p>
+      <h2>The protocol is the same. The dials change.</h2>
+      <p>This is how it would be curated once the numbers are on the table. She can start tomorrow. We tune it the week the labs land.</p>
+      <table>
+        <thead>
+          <tr><th>If we see</th><th>It means</th><th>We turn this dial</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>High TPO / Tg antibodies</td>
+            <td>The attack is active</td>
+            <td>Stay strict the full 90 days. Selenium is non-negotiable. Gluten never comes back first.</td>
+          </tr>
+          <tr>
+            <td>Low ferritin (often under ~70)</td>
+            <td>She cannot build or convert thyroid hormone well</td>
+            <td>Red meat daily. Recheck. Iron pills only after a full iron panel — inflammation can fake a low reading.</td>
+          </tr>
+          <tr>
+            <td>Low vitamin D</td>
+            <td>The immune system is flying blind</td>
+            <td>Dose D3 to a blood level, not a guess. Recheck at week 8.</td>
+          </tr>
+          <tr>
+            <td>Homocysteine high, or a known MTHFR variant</td>
+            <td>Methylation is the bottleneck Brecka talks about</td>
+            <td>Methylfolate + methyl-B12. If she feels wired, lower the dose. Homocysteine is the scoreboard.</td>
+          </tr>
+          <tr>
+            <td>Free T3 low, reverse T3 high</td>
+            <td>Conversion problem, not just a “broken thyroid”</td>
+            <td>More calories, more fat, more sleep. Hold fasting. Selenium + iron + zinc first.</td>
+          </tr>
+          <tr>
+            <td>High fasting insulin, high TG, low HDL</td>
+            <td>Carbohydrate is not her friend</td>
+            <td>Stay very low carb. 16:8 after week 2. This is also the fat-loss lever.</td>
+          </tr>
+          <tr>
+            <td>LDL rises, but TG and HDL look excellent</td>
+            <td>Common on carnivore. Not the whole heart story</td>
+            <td>Watch waist, CRP, TG:HDL, how she feels. Do not panic at a single LDL number.</td>
+          </tr>
+          <tr>
+            <td>TSH very high and she is getting sicker</td>
+            <td>The gland may already be spent</td>
+            <td>Diet still helps the attack and the weight. Ask once about Tirosint or compounded T4/T3 with no fillers — many “can’t take the pill” cases are lactose, gluten, or dye allergies.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note" style="color:rgba(250,247,241,.65)">Labs to draw, fasting morning, same lab both times: TSH, Free T4, Free T3, Reverse T3, TPO, TgAb, ferritin + iron panel, vitamin D, B12, folate, homocysteine, CBC, CMP, fasting insulin, HbA1c, lipids, hs-CRP.</p>
+    </div>
+  </section>
+
+  <section class="ask" id="ask">
+    <div class="wrap-narrow">
+      <p class="eyebrow">The ask</p>
+      <h2>Ninety days. Then we look at the paper, not the fear.</h2>
+      <p>She does not have to believe this forever. She has to believe it enough to run a clean experiment: meat, salt, water, four supplements, sleep, and a second lab draw. If nothing moves — symptoms, waist, antibodies — she has lost a season of grocery boredom, not a year of her life.</p>
+      <p>If it moves, she will have done what the prescription could not: treated the reason the immune system was firing, and taken weight off an immune organ that was making the firing worse.</p>
+      <p>That is not a guaranteed cure. Remission is on the table for some people. A quieter attack, a smaller waist, and a brain that comes back online is already a different life. That is the sell. It is also the truth.</p>
+      <div class="hero-actions" style="margin-top:28px">
+        <a class="cta gold" href="#plan">Start at week 0</a>
+        <a class="cta" href="#readout">Show this to a clinician</a>
+      </div>
+      <p class="fine">Not medical advice. Not an FDA-approved therapy. If the thyroid tissue is already gone, food cannot grow a new gland — it can still calm the attack, restore conversion nutrients, and take the inflammatory load of excess weight off her. Chest pain, fainting, or a crash in how she feels is a doctor visit, not a reason to eat less.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p><strong>Protocol H-90</strong> · Prepared for a friend who cannot take the medicine · Sources include Esposito 2016 (PMC5028075), Huang 2024, Krysiak 2019, Abbott 2019 (PMC6592837), Lennerz 2021 (PMC8684475), Gärtner 2002, and the 2024 selenium meta-analyses. Full citations live in this folder as <em>2-EVIDENCE-AND-STUDIES.txt</em>.</p>
+    </div>
+  </footer>
+</body>
+</html>
