@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Protocol H-90 — Watch first, then the 90-day plan</title>
-  <meta name="description" content="ADHD-friendly briefing: timestamped videos plus the Hashimoto’s diet protocol." />
+  <title>Protocol H-90 — Hashimoto’s, carnivore, and a 90-day reset</title>
+  <meta name="description" content="A 90-day meat-based protocol for Hashimoto’s and autoimmune symptoms. Watch the evidence. Adapt it to your labs." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -129,12 +129,38 @@
     }
     .ask p { color: rgba(250,247,241,.88); }
     .fine { font-size: 13px; color: rgba(250,247,241,.68); margin-top: 18px; }
+    .drop {
+      border: 1.5px dashed rgba(196,165,116,.55); border-radius: 16px; padding: 22px;
+      text-align: center; background: rgba(255,255,255,.03); cursor: pointer;
+    }
+    .drop.on { border-color: var(--gold); background: rgba(196,165,116,.08); }
+    .drop input { display: none; }
+    .form-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 16px; }
+    label.f { display: grid; gap: 4px; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(250,247,241,.55); }
+    label.f input, label.f select {
+      background: #121820; color: var(--cream); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 10px; padding: 10px; font: 15px Outfit, sans-serif;
+    }
+    .checks { display: flex; flex-wrap: wrap; gap: 10px 16px; margin: 14px 0; font-size: 14px; }
+    .checks label { display: flex; gap: 8px; align-items: center; color: rgba(250,247,241,.85); }
+    .result { display: grid; gap: 10px; margin-top: 18px; }
+    .dial {
+      background: var(--navy-2); border-left: 4px solid var(--gold); border-radius: 12px; padding: 14px 16px;
+    }
+    .dial strong { display: block; font-family: Fraunces, Georgia, serif; font-size: 18px; margin-bottom: 4px; }
+    .found { font-size: 13px; color: var(--gold); margin-top: 8px; }
     footer { background: #120e0b; color: rgba(250,247,241,.6); padding: 28px 0 40px; font-size: 13px; }
     footer strong { color: var(--cream); }
+    @media print {
+      nav, .hero, #watch, .cream, #readout, #plan, .ask, footer, .chips, .drop, #labform .actions, .eyebrow { display: none !important; }
+      #adapt { background: #fff; color: #111; padding: 0; }
+      #adapt h2, .dial strong { color: #111; }
+      .dial { border: 1px solid #ddd; background: #fff; color: #111; break-inside: avoid; }
+    }
 
     @media (max-width: 900px) {
       .nav-links { display: none; }
-      .first4, .grid3, .grid2, .grid4, .split, .menu, .row { grid-template-columns: 1fr; }
+      .first4, .grid3, .grid2, .grid4, .split, .menu, .row, .form-grid { grid-template-columns: 1fr 1fr; }
       .row img { width: 100%; height: 140px; }
       .jump { justify-self: start; }
       section { padding: 48px 0; }
@@ -149,25 +175,25 @@
         <a href="#watch">Watch</a>
         <a href="#readout">Data</a>
         <a href="#plan">Plan</a>
-        <a href="#labs">Labs</a>
+        <a href="#adapt">Your labs</a>
       </div>
-      <a class="cta" href="#watch">Start with 4 videos</a>
+      <a class="cta" href="#adapt">Adapt to my labs</a>
     </div>
   </nav>
 
   <header class="hero" id="top">
     <div class="hero-inner">
-      <p class="kicker">For one woman · Hashimoto’s · cannot take the pill</p>
-      <h1>Don’t read 40 papers first.<br>Watch four clips.</h1>
-      <p class="lede">Then the 90-day plate is simple: meat, salt, water, a methylated multi, selenium. This page is built so you can skim. Every video jumps to the exact minute.</p>
+      <p class="kicker">Hashimoto’s · autoimmunity · fat loss · no prescription required</p>
+      <h1>The pill is not<br>the only intervention.</h1>
+      <p class="lede">A 90-day meat-based protocol aimed at the cause: gut triggers, empty nutrient tanks, high insulin. Watch four clips. Then run your labs through the adapter. Nothing is uploaded to a server.</p>
       <div class="actions">
         <a class="cta gold" href="#watch">Watch the 4</a>
-        <a class="cta ghost" href="#plan">Skip to the food</a>
+        <a class="cta ghost" href="#adapt">Drop in bloodwork</a>
       </div>
       <div class="meta">
         <span>ADHD layout · short cards</span>
-        <span>Timestamps, not 3-hour dumps</span>
-        <span>90 days, then labs</span>
+        <span>Timestamped videos</span>
+        <span>Custom plan from your numbers</span>
       </div>
     </div>
   </header>
@@ -175,7 +201,7 @@
   <section id="watch" class="navy">
     <div class="wrap">
       <p class="eyebrow">Watch these 4 first · about 25 minutes</p>
-      <h2>If she only clicks four things, click these.</h2>
+      <h2>If there is time for only four things, click these.</h2>
       <p>Each card opens YouTube at the right second. No hunting.</p>
 
       <div class="first4">
@@ -187,7 +213,7 @@
           <div class="vbody">
             <div class="who">1 · Joe Rogan #2060 · Gary Brecka</div>
             <h3>They name the disease before they ask what is missing.</h3>
-            <p class="why">Brecka: nutrient gaps get labeled autoimmune. Methylated vitamins first. This is the clip that matches her situation.</p>
+            <p class="why">Brecka: nutrient gaps get labeled autoimmune. Methylated vitamins first. Start here if the only offer so far was a refill.</p>
           </div>
         </a>
         <a class="vcard" href="https://www.youtube.com/watch?v=hWhzQkWz3jA&t=79s" target="_blank" rel="noopener">
@@ -220,7 +246,7 @@
           <div class="vbody">
             <div class="who">4 · Neisha Berry, RN</div>
             <h3>A nurse with Hashimoto’s. Diet first. Remission.</h3>
-            <p class="why">Ken Berry’s wife. Keto / carnivore as an elimination diet, then she learned her foods. This is a person, not a study.</p>
+            <p class="why">Ken Berry’s wife. Keto / carnivore as an elimination diet, then the trigger foods became obvious. A person, not a study.</p>
           </div>
         </a>
       </div>
@@ -326,7 +352,7 @@
           <img src="https://i.ytimg.com/vi/VftiRHObhcU/mqdefault.jpg" alt="">
           <div>
             <h4>JRE #2069 · Shawn Baker, 2023 update</h4>
-            <p>Newer data, autoimmune reports, how people actually live this. Better than the 2017 episode if she only has one Baker slot.</p>
+            <p>Newer data, autoimmune reports, how people actually live this. Better than the 2017 episode if there is only time for one Baker slot.</p>
           </div>
           <span class="jump">Full</span>
         </a>
@@ -362,7 +388,7 @@
           <img src="https://i.ytimg.com/vi/hol3oHUs91c/mqdefault.jpg" alt="">
           <div>
             <h4>Neisha Berry · putting Hashimoto’s into remission</h4>
-            <p>Full conversation. Keto then carnivore as a tool, then ketovore once she knew her triggers.</p>
+            <p>Full conversation. Keto then carnivore as a tool, then ketovore once the trigger foods were obvious.</p>
           </div>
           <span class="jump">Full</span>
         </a>
@@ -380,7 +406,7 @@
           <img src="https://i.ytimg.com/vi/RuOvn4UqznU/mqdefault.jpg" alt="">
           <div>
             <h4>Jamnadas · you evolved eating meat, not cereal</h4>
-            <p>6:04 — Paleolithic genetics vs breakfast food. Ties fasting to the same plate we are asking her to eat.</p>
+            <p>6:04 — Paleolithic genetics vs breakfast food. Ties fasting to the same plate in this protocol.</p>
           </div>
           <span class="jump">6:04</span>
         </a>
@@ -409,7 +435,7 @@
         <div class="card"><div class="stat">92→29</div><small>Symptoms · 10 wks</small><p>Abbott 2019 AIP. People felt better before antibodies moved.</p></div>
       </div>
       <details>
-        <summary>Open the study list (for her, or for a doctor)</summary>
+        <summary>Open the study list (for you, or for a clinician)</summary>
         <ul>
           <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5028075/" target="_blank">Esposito 2016</a> — 180 patients, 21 days, antibodies −40 to −57%.</li>
           <li><a href="https://pubmed.ncbi.nlm.nih.gov/38552311/" target="_blank">Huang 2024</a> — 6-month low-carb, TPO 211→89, MRI better.</li>
@@ -426,7 +452,7 @@
     <div class="wrap split">
       <div>
         <p class="eyebrow">The 10-second mechanism</p>
-        <h2>Three things make autoimmunity. She can change two.</h2>
+        <h2>Three things make autoimmunity. Two of them can change.</h2>
         <div class="grid3" style="grid-template-columns:1fr; margin-top:14px">
           <div class="card"><small>01 Genes</small><p>Locked. Not a life sentence.</p></div>
           <div class="card"><small>02 Trigger</small><p>Gluten, dairy, seed oils, sugar, plant antigens. Removable.</p></div>
@@ -452,7 +478,7 @@
   <section id="plan">
     <div class="wrap">
       <p class="eyebrow">Protocol H-90</p>
-      <h2>What she actually does.</h2>
+      <h2>The 90-day protocol.</h2>
       <div class="steps">
         <div class="step"><div><h3>Week 0</h3><p>Labs. Photos. Waist. 1–10 scores. Buy food + 4 supplements. Ask a doctor to draw blood, not to approve the menu.</p></div></div>
         <div class="step"><div><h3>Days 1–30</h3><p>Beef, lamb, fatty fish, salt, water. Eggs if they sit well. Butter. No gluten, cheese, plants, alcohol, “keto snacks.” Eat until full.</p></div></div>
@@ -462,7 +488,7 @@
       <div class="menu">
         <div class="meal"><h4>Breakfast or skip</h4><p>Eggs + leftover steak. Or salted coffee if 16:8 has started.</p></div>
         <div class="meal"><h4>Lunch</h4><p>80/20 ground beef, smashed, salted. Or sardines.</p></div>
-        <div class="meal"><h4>Dinner</h4><p>Ribeye, roast, lamb, salmon. Bone broth if she wants warm.</p></div>
+        <div class="meal"><h4>Dinner</h4><p>Ribeye, roast, lamb, salmon. Bone broth if something warm helps.</p></div>
       </div>
       <table>
         <thead><tr><th>On the plate</th><th>Off</th><th>On the counter</th></tr></thead>
@@ -477,38 +503,65 @@
     </div>
   </section>
 
-  <section class="navy" id="labs">
+  <section class="navy" id="adapt">
     <div class="wrap">
-      <p class="eyebrow">If we had her bloodwork</p>
-      <h2>Same protocol. Different dials.</h2>
-      <table>
-        <thead><tr><th>If we see</th><th>We turn</th></tr></thead>
-        <tbody>
-          <tr><td>High TPO / TgAb</td><td>Stay strict 90 days. Selenium every day. Gluten never first.</td></tr>
-          <tr><td>Ferritin under ~70</td><td>Red meat daily. Recheck. No random iron pills.</td></tr>
-          <tr><td>Low vitamin D</td><td>Dose D3 to a blood number. Recheck week 8.</td></tr>
-          <tr><td>High homocysteine / MTHFR</td><td>Methylfolate + methyl-B12. Homocysteine is the scoreboard.</td></tr>
-          <tr><td>Low free T3, high reverse T3</td><td>More food, more fat, more sleep. Hold fasting.</td></tr>
-          <tr><td>High insulin / high TG</td><td>Stay very low carb. 16:8 after week 2. This is the fat-loss lever.</td></tr>
-          <tr><td>LDL up, TG and HDL look great</td><td>Common. Watch waist + CRP + how she feels. Don’t panic at one number.</td></tr>
-          <tr><td>TSH very high and she is crashing</td><td>Ask once about Tirosint or compounded T4/T3 with no fillers. Many “can’t take the pill” cases are lactose / gluten / dye.</td></tr>
-        </tbody>
-      </table>
-      <p style="margin-top:14px;font-size:13px">Draw: TSH, Free T3, Free T4, Reverse T3, TPO, TgAb, ferritin + iron panel, D, B12, folate, homocysteine, CBC, CMP, fasting insulin, HbA1c, lipids, hs-CRP.</p>
+      <p class="eyebrow">Custom H-90 · stays on this device</p>
+      <h2>Upload labs. Get the dials for this body.</h2>
+      <p>The 90-day plate stays the same. The emphasis changes. Drop a PDF or photo, or type the numbers. Nothing is sent anywhere — this page reads the file in the browser and builds a plan you can print.</p>
+
+      <label class="drop" id="drop">
+        <input type="file" id="labfile" accept=".pdf,.png,.jpg,.jpeg,.webp,.txt" />
+        <strong style="color:var(--cream)">Drop bloodwork here</strong>
+        <p style="margin:6px 0 0">PDF or photo. Optional — typing the numbers is more accurate.</p>
+        <p class="found" id="filemeta"></p>
+      </label>
+
+      <form id="labform" onsubmit="return false">
+        <div class="form-grid">
+          <label class="f">TSH (µIU/mL)<input id="tsh" inputmode="decimal" placeholder="2.4"></label>
+          <label class="f">Free T3 (pg/mL)<input id="ft3" inputmode="decimal" placeholder="2.8"></label>
+          <label class="f">Free T4 (ng/dL)<input id="ft4" inputmode="decimal" placeholder="1.1"></label>
+          <label class="f">Reverse T3 (ng/dL)<input id="rt3" inputmode="decimal" placeholder="16"></label>
+          <label class="f">TPO Ab (IU/mL)<input id="tpo" inputmode="decimal" placeholder="120"></label>
+          <label class="f">Tg Ab (IU/mL)<input id="tgab" inputmode="decimal" placeholder="40"></label>
+          <label class="f">Ferritin (ng/mL)<input id="ferritin" inputmode="decimal" placeholder="28"></label>
+          <label class="f">Vitamin D (ng/mL)<input id="vitd" inputmode="decimal" placeholder="22"></label>
+          <label class="f">Homocysteine (µmol/L)<input id="hcy" inputmode="decimal" placeholder="13"></label>
+          <label class="f">B12 (pg/mL)<input id="b12" inputmode="decimal" placeholder="380"></label>
+          <label class="f">Fasting insulin (µIU/mL)<input id="insulin" inputmode="decimal" placeholder="14"></label>
+          <label class="f">Triglycerides (mg/dL)<input id="tg" inputmode="decimal" placeholder="160"></label>
+          <label class="f">HDL (mg/dL)<input id="hdl" inputmode="decimal" placeholder="42"></label>
+          <label class="f">LDL (mg/dL)<input id="ldl" inputmode="decimal" placeholder="140"></label>
+          <label class="f">hs-CRP (mg/L)<input id="crp" inputmode="decimal" placeholder="2.1"></label>
+          <label class="f">First name (optional)<input id="pname" placeholder="For the printout"></label>
+        </div>
+        <div class="checks">
+          <label><input type="checkbox" id="nomeds"> Cannot take thyroid hormone</label>
+          <label><input type="checkbox" id="mthfr"> Known MTHFR variant</label>
+          <label><input type="checkbox" id="overwt"> Significant weight to lose</label>
+          <label><input type="checkbox" id="crash"> Feeling worse / crashing</label>
+        </div>
+        <div class="actions">
+          <button class="cta gold" type="button" id="build">Build my adaptation</button>
+          <button class="cta" type="button" id="printplan" hidden>Print / save</button>
+        </div>
+      </form>
+      <div class="result" id="result"></div>
+      <p class="fine">Typical cutoffs, not your lab’s exact range. This is a protocol adapter, not a diagnosis. Take the printout to a clinician.</p>
     </div>
   </section>
 
   <section class="ask" id="ask">
     <div class="narrow">
-      <p class="eyebrow">The ask</p>
-      <h2>Four videos. Then 90 days.</h2>
-      <p>She does not have to marry this. She has to run a clean experiment: meat, salt, water, four supplements, sleep, second labs.</p>
-      <p>Not a guaranteed cure. Remission is on the table for some people. A quieter attack and a smaller waist is already a different life.</p>
+      <p class="eyebrow">The offer</p>
+      <h2>Four videos. Your numbers. Ninety days.</h2>
+      <p>This is a clean experiment: meat, salt, water, four supplements, sleep, then a second lab draw. Not a religion. Not a guaranteed cure.</p>
+      <p>Remission is on the table for some people. A quieter immune attack and a smaller waist is already a different life.</p>
       <div class="actions">
-        <a class="cta gold" href="#watch">Play video 1</a>
-        <a class="cta" href="#plan">Show me dinner</a>
+        <a class="cta gold" href="#adapt">Adapt to my labs</a>
+        <a class="cta" href="#watch">Play video 1</a>
       </div>
-      <p class="fine">Not medical advice. If the gland is already gone, food cannot grow a new one. It can still calm the attack and take inflammatory weight off. Chest pain, fainting, or a crash = doctor, not less food.</p>
+      <p class="fine">Not medical advice. If the gland is already gone, food cannot grow a new one. It can still calm the attack and take inflammatory weight off. Chest pain, fainting, or a crash = a doctor, not less food.</p>
     </div>
   </section>
 
@@ -530,6 +583,151 @@
         r.classList.toggle('hidden', f !== 'all' && !tags.includes(f));
       });
     }));
+
+    const $ = (id) => document.getElementById(id);
+    const n = (id) => {
+      const v = $(id).value.replace(/,/g, '').trim();
+      if (v === '') return null;
+      const x = parseFloat(v);
+      return Number.isFinite(x) ? x : null;
+    };
+
+    function grab(text, patterns) {
+      for (const p of patterns) {
+        const m = text.match(p);
+        if (m) {
+          const x = parseFloat(m[1].replace(/,/g, ''));
+          if (Number.isFinite(x)) return x;
+        }
+      }
+      return null;
+    }
+
+    function fillIf(id, val) {
+      if (val != null && $(id).value === '') $(id).value = String(val);
+    }
+
+    function parseLabText(raw) {
+      const t = raw.replace(/\s+/g, ' ');
+      fillIf('tsh', grab(t, [/TSH[^0-9]{0,24}(\d+\.?\d*)/i, /Thyroid Stimulating Hormone[^0-9]{0,24}(\d+\.?\d*)/i]));
+      fillIf('ft3', grab(t, [/Free T3[^0-9]{0,24}(\d+\.?\d*)/i, /FT3[^0-9]{0,24}(\d+\.?\d*)/i]));
+      fillIf('ft4', grab(t, [/Free T4[^0-9]{0,24}(\d+\.?\d*)/i, /FT4[^0-9]{0,24}(\d+\.?\d*)/i]));
+      fillIf('rt3', grab(t, [/Reverse T3[^0-9]{0,24}(\d+\.?\d*)/i, /rT3[^0-9]{0,24}(\d+\.?\d*)/i]));
+      fillIf('tpo', grab(t, [/TPO[^0-9]{0,28}(\d+\.?\d*)/i, /Thyroid Peroxidase[^0-9]{0,24}(\d+\.?\d*)/i]));
+      fillIf('tgab', grab(t, [/Thyroglobulin Ab[^0-9]{0,24}(\d+\.?\d*)/i, /TgAb[^0-9]{0,24}(\d+\.?\d*)/i, /Anti-Tg[^0-9]{0,24}(\d+\.?\d*)/i]));
+      fillIf('ferritin', grab(t, [/Ferritin[^0-9]{0,24}(\d+\.?\d*)/i]));
+      fillIf('vitd', grab(t, [/25-OH[^0-9]{0,24}(\d+\.?\d*)/i, /Vitamin D[^0-9]{0,28}(\d+\.?\d*)/i, /25-Hydroxy[^0-9]{0,24}(\d+\.?\d*)/i]));
+      fillIf('hcy', grab(t, [/Homocysteine[^0-9]{0,24}(\d+\.?\d*)/i]));
+      fillIf('b12', grab(t, [/Vitamin B12[^0-9]{0,24}(\d+\.?\d*)/i, /B12[^0-9]{0,20}(\d+\.?\d*)/i, /Cobalamin[^0-9]{0,24}(\d+\.?\d*)/i]));
+      fillIf('insulin', grab(t, [/Fasting Insulin[^0-9]{0,24}(\d+\.?\d*)/i, /Insulin[^0-9]{0,20}(\d+\.?\d*)/i]));
+      fillIf('tg', grab(t, [/Triglycerides[^0-9]{0,24}(\d+\.?\d*)/i]));
+      fillIf('hdl', grab(t, [/HDL[^0-9]{0,20}(\d+\.?\d*)/i]));
+      fillIf('ldl', grab(t, [/LDL[^0-9]{0,20}(\d+\.?\d*)/i]));
+      fillIf('crp', grab(t, [/hs-?CRP[^0-9]{0,20}(\d+\.?\d*)/i, /C-Reactive Protein[^0-9]{0,24}(\d+\.?\d*)/i]));
+    }
+
+    async function readFile(file) {
+      const meta = $('filemeta');
+      meta.textContent = 'Attached: ' + file.name + ' · stays on this device';
+      const buf = await file.arrayBuffer();
+      const bytes = new Uint8Array(buf);
+      let text = '';
+      if (file.type.startsWith('text') || file.name.toLowerCase().endsWith('.txt')) {
+        text = new TextDecoder().decode(bytes);
+      } else {
+        // Pull readable strings out of PDFs and some image metadata.
+        let acc = '';
+        for (let i = 0; i < bytes.length; i++) {
+          const c = bytes[i];
+          acc += (c >= 32 && c < 127) ? String.fromCharCode(c) : ' ';
+        }
+        text = acc;
+      }
+      parseLabText(text);
+      const filled = ['tsh','ft3','ft4','rt3','tpo','tgab','ferritin','vitd','hcy','b12','insulin','tg','hdl','ldl','crp']
+        .filter((id) => $(id).value !== '').length;
+      meta.textContent += filled
+        ? ' · pulled ' + filled + ' values — check they match the printout, then build.'
+        : ' · could not read numbers automatically. Type them from the report.';
+    }
+
+    const drop = $('drop');
+    const fileIn = $('labfile');
+    drop.addEventListener('dragover', (e) => { e.preventDefault(); drop.classList.add('on'); });
+    drop.addEventListener('dragleave', () => drop.classList.remove('on'));
+    drop.addEventListener('drop', (e) => {
+      e.preventDefault(); drop.classList.remove('on');
+      if (e.dataTransfer.files[0]) readFile(e.dataTransfer.files[0]);
+    });
+    fileIn.addEventListener('change', () => { if (fileIn.files[0]) readFile(fileIn.files[0]); });
+
+    function card(title, body) {
+      return '<article class="dial"><strong>' + title + '</strong><span>' + body + '</span></article>';
+    }
+
+    function build() {
+      const name = $('pname').value.trim();
+      const tsh = n('tsh'), ft3 = n('ft3'), ft4 = n('ft4'), rt3 = n('rt3');
+      const tpo = n('tpo'), tgab = n('tgab'), ferritin = n('ferritin'), vitd = n('vitd');
+      const hcy = n('hcy'), b12 = n('b12'), insulin = n('insulin');
+      const tg = n('tg'), hdl = n('hdl'), ldl = n('ldl'), crp = n('crp');
+      const nomeds = $('nomeds').checked, mthfr = $('mthfr').checked;
+      const overwt = $('overwt').checked, crash = $('crash').checked;
+      const any = [tsh,ft3,ft4,rt3,tpo,tgab,ferritin,vitd,hcy,b12,insulin,tg,hdl,ldl,crp].some((v) => v != null);
+
+      const out = [];
+      out.push(card(
+        (name ? name + ' · ' : '') + 'Baseline H-90',
+        'Meat, salt, water. Fatty cuts. Methylated multi (5-MTHF + methyl-B12, not folic acid). Selenium 200 mcg. Magnesium. Electrolytes. Sleep. Recheck labs at week 8–12.'
+      ));
+
+      if (tpo != null && tpo >= 35 || tgab != null && tgab >= 20) {
+        out.push(card('Attack is active (antibodies)', 'Stay strict the full 90 days. Selenium every day. Do not add gluten back first. Antibodies can lag symptoms — do not quit at week 4 because TPO is still high.'));
+      }
+      if (ferritin != null && ferritin < 70) {
+        out.push(card('Ferritin is a brake (' + ferritin + ')', 'Red meat daily. Conversion of T4 → T3 needs iron. Recheck. Do not start iron pills without a full iron panel — inflammation can fake this number.'));
+      }
+      if (vitd != null && vitd < 40) {
+        out.push(card('Vitamin D is low (' + vitd + ' ng/mL)', 'Dose D3 + K2 to a blood level, not a guess. Recheck week 8. Many functional targets sit 50–80 ng/mL — confirm with a clinician.'));
+      }
+      if ((hcy != null && hcy >= 10) || mthfr) {
+        out.push(card('Methylation support', (hcy != null ? 'Homocysteine ' + hcy + '. ' : '') + 'Use methylfolate + methyl-B12. If you feel wired or sleepless, take the multi every other day. Homocysteine is the scoreboard, not the gene test.'));
+      }
+      if (b12 != null && b12 < 400) {
+        out.push(card('B12 is on the floor (' + b12 + ')', 'Meat-only usually fixes this. If it is still low at week 8, ask about methyl-B12 beyond the multi. Fatigue and brain fog often track this number.'));
+      }
+      if ((ft3 != null && ft3 < 2.3) || (rt3 != null && rt3 > 20) || (ft3 != null && rt3 != null && rt3 / ft3 > 10)) {
+        out.push(card('Conversion problem, not just a “broken thyroid”', 'More food. More fat. More sleep. Hold fasting. Selenium + iron first. Very-low-carb plus a calorie crash drops T3 further.'));
+      }
+      if ((insulin != null && insulin >= 10) || (tg != null && hdl != null && tg / hdl >= 2) || overwt) {
+        out.push(card('Insulin / fat-loss lever', 'Stay very low carb. Two meals. 16:8 only after two weeks of eating enough. Fat tissue is an immune organ — losing it is part of treating the gland.'));
+      }
+      if (ldl != null && ldl >= 160 && tg != null && tg < 100 && hdl != null && hdl >= 50) {
+        out.push(card('LDL rose, the rest looks insulin-sensitive', 'Common on carnivore. Watch waist, triglycerides, HDL, CRP, and how you feel. Do not panic at a single LDL number.'));
+      }
+      if (crp != null && crp >= 1) {
+        out.push(card('Inflammation is on (CRP ' + crp + ')', 'The elimination is doing a job here. Recheck with the week 8–12 labs. Abbott’s AIP group dropped CRP about 29% in 10 weeks.'));
+      }
+      if (nomeds) {
+        out.push(card('Cannot take the hormone pill', 'This protocol is doing two jobs: quiet the attack, and squeeze conversion from whatever gland is left. Ask once about Tirosint or compounded T4/T3 with no lactose, gluten, or dye — many “can’t take it” cases are filler allergies.'));
+      }
+      if ((tsh != null && tsh >= 10 && crash) || crash) {
+        out.push(card('Red flag · do not wait this out on beef alone', 'Very high TSH plus getting sicker is a clinician visit. Diet still helps the attack and the weight. It is not an ER substitute.'));
+      }
+      if (tsh != null && tsh < 0.4) {
+        out.push(card('TSH is suppressed', 'This adapter assumes hypothyroidism / Hashimoto’s. A low TSH needs a clinician — do not add iodine or extra thyroid “support.”'));
+      }
+      if (!any && !nomeds && !mthfr && !overwt && !crash) {
+        out.push(card('No numbers yet', 'Drop a PDF or type TSH, TPO, ferritin, vitamin D, and insulin. Even three numbers change the dials. The baseline plate is still valid today.'));
+      }
+
+      $('result').innerHTML = out.join('');
+      $('printplan').hidden = false;
+      $('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    $('build').addEventListener('click', build);
+    $('printplan').addEventListener('click', () => window.print());
   </script>
 </body>
 </html>
