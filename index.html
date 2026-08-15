@@ -7,130 +7,134 @@
   <meta name="description" content="A 90-day meat-based protocol for Hashimoto’s and autoimmune symptoms. Watch the evidence. Adapt it to your labs." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #1b1712; --soft: #4a433a; --paper: #f4efe6; --cream: #faf7f1;
-      --navy: #1c2836; --navy-2: #243447; --copper: #9a6b3f; --gold: #c4a574;
-      --wine: #7a2e2e; --line: rgba(27,23,18,.12); --shadow: 0 18px 40px rgba(28,40,54,.12);
+      /* "Clinic" — one accent, hairlines, no shadows. Depth from scale + contrast. */
+      --ink: #0a0a0a; --soft: #57544f; --faint: #8a8681;
+      --paper: #fcfcfa; --cream: #ffffff; --sink: #f7f6f3; --soft-bg: #f1efea;
+      --navy: #0a0a0a; --navy-2: #161614;
+      --copper: #9b1b30; --gold: #e8a4b0; --wine: #9b1b30;
+      --line: #e4e2dc; --line-soft: #eceae4; --shadow: none;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--paper); color: var(--ink); font-family: Outfit, system-ui, sans-serif; line-height: 1.5; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Inter Tight', system-ui, sans-serif; line-height: 1.55; font-variant-numeric: tabular-nums; }
     img { max-width: 100%; display: block; }
     a { color: inherit; }
     .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
     .narrow { width: min(760px, calc(100% - 32px)); margin: 0 auto; }
 
-    nav { position: sticky; top: 0; z-index: 30; background: rgba(244,239,230,.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+    nav { position: sticky; top: 0; z-index: 30; background: rgba(252,252,250,.94); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
     nav .bar { display: flex; align-items: center; justify-content: space-between; height: 60px; width: min(1120px, calc(100% - 32px)); margin: 0 auto; gap: 12px; }
-    .brand { font-family: Fraunces, Georgia, serif; letter-spacing: .14em; text-transform: uppercase; font-size: 13px; text-decoration: none; }
+    .brand { font-weight: 800; letter-spacing: -.03em; text-transform: none; font-size: 17px; text-decoration: none; }
     .nav-links { display: flex; gap: 18px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
     .nav-links a { text-decoration: none; color: var(--soft); }
-    .cta { background: var(--navy); color: var(--cream); text-decoration: none; padding: 9px 14px; border-radius: 999px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+    .cta { background: var(--ink); color: var(--paper); text-decoration: none; padding: 11px 16px; border-radius: 8px; font-size: 13px; font-weight: 700; letter-spacing: -.01em; text-transform: none; white-space: nowrap; }
     .cta.gold { background: var(--copper); color: #fff; }
     .cta.ghost { background: transparent; border: 1px solid rgba(255,255,255,.35); }
 
     .hero {
-      min-height: 78vh; display: grid; align-items: end; color: var(--cream);
-      background: linear-gradient(180deg, rgba(18,14,11,.2), rgba(18,14,11,.88)), url("assets/hero.jpg") center/cover;
+      min-height: 84vh; display: grid; align-items: end; color: var(--cream);
+      background: linear-gradient(180deg, rgba(10,10,10,.24), rgba(10,10,10,.9)), url("assets/hero.jpg") center/cover;
     }
     .hero-inner { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 56px 0 48px; }
-    .kicker { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin: 0 0 12px; }
-    h1 { font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: clamp(36px, 6.4vw, 72px); line-height: .95; letter-spacing: -.03em; margin: 0 0 16px; }
-    h2 { font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: clamp(28px, 4vw, 46px); line-height: 1.05; letter-spacing: -.02em; margin: 0 0 12px; }
-    h3 { font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: 22px; margin: 0 0 8px; }
+    .kicker { font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+    h1 { font-family: 'Inter Tight', system-ui, sans-serif; font-weight: 800; font-size: clamp(38px, 6.8vw, 78px); line-height: .92; letter-spacing: -.05em; margin: 0 0 18px; }
+    h2 { font-family: 'Inter Tight', system-ui, sans-serif; font-weight: 800; font-size: clamp(28px, 4.2vw, 48px); line-height: 1.0; letter-spacing: -.045em; margin: 0 0 14px; }
+    h3 { font-family: 'Inter Tight', system-ui, sans-serif; font-weight: 700; font-size: 21px; letter-spacing: -.028em; line-height: 1.2; margin: 0 0 8px; }
     p { margin: 0 0 12px; color: var(--soft); }
     .lede { max-width: 640px; font-size: 18px; color: rgba(250,247,241,.88); }
     .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
     .meta { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 28px; padding-top: 16px; border-top: 1px solid rgba(250,247,241,.18); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: rgba(250,247,241,.7); }
 
-    section { padding: 64px 0; }
-    .eyebrow { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--copper); margin: 0 0 10px; }
+    section { padding: 78px 0; }
+    .eyebrow { font-size: 11px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; color: var(--copper); margin: 0 0 12px; }
     .navy { background: var(--navy); color: var(--cream); }
     .navy p, .navy li, .navy summary { color: rgba(250,247,241,.78); }
     .navy h2, .navy h3 { color: var(--cream); }
     .cream { background: var(--cream); }
+    .sink { background: var(--sink); }
 
     .first4 { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 14px; margin-top: 24px; }
     .vcard {
-      display: flex; flex-direction: column; background: var(--cream); border-radius: 16px; overflow: hidden;
-      border: 1px solid var(--line); text-decoration: none; color: inherit; min-height: 100%;
+      display: flex; flex-direction: column; background: transparent; border-radius: 0; overflow: hidden;
+      border: 0; border-top: 1px solid var(--line); text-decoration: none; color: inherit; min-height: 100%; padding-top: 12px;
     }
-    .navy .vcard { background: var(--navy-2); border-color: rgba(255,255,255,.08); color: var(--cream); }
-    .thumb { position: relative; aspect-ratio: 16/9; background: #111; }
+    .navy .vcard { background: transparent; border-top-color: rgba(252,252,250,.28); color: var(--cream); }
+    .thumb { position: relative; aspect-ratio: 16/9; background: #111; border-radius: 6px; overflow: hidden; }
     .thumb img { width: 100%; height: 100%; object-fit: cover; }
     .play {
-      position: absolute; left: 10px; bottom: 10px; background: var(--copper); color: #fff;
-      font-size: 11px; letter-spacing: .08em; text-transform: uppercase; padding: 5px 8px; border-radius: 999px;
+      position: absolute; left: 8px; bottom: 8px; background: var(--copper); color: #fff;
+      font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 5px 9px; border-radius: 4px;
     }
-    .vbody { padding: 14px; display: grid; gap: 6px; flex: 1; }
-    .who { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--copper); }
+    .vbody { padding: 12px 0 0; display: grid; gap: 6px; flex: 1; }
+    .who { font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--copper); }
     .navy .who { color: var(--gold); }
-    .vcard h3 { font-size: 17px; }
+    .vcard h3 { font-size: 17px; letter-spacing: -.025em; }
     .vcard p { font-size: 14px; margin: 0; }
     .why { font-size: 13px; color: var(--soft); }
     .navy .why { color: rgba(250,247,241,.7); }
 
     .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 8px; }
     .chip {
-      border: 1px solid var(--line); background: var(--cream); color: var(--ink);
-      border-radius: 999px; padding: 7px 12px; font-size: 13px; cursor: pointer;
+      border: 1px solid var(--line); background: transparent; color: var(--soft);
+      border-radius: 6px; padding: 9px 14px; font-size: 13px; font-weight: 600; cursor: pointer;
     }
-    .chip.on { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+    .chip.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
     .list { display: grid; gap: 10px; margin-top: 16px; }
     .row {
-      display: grid; grid-template-columns: 120px 1fr auto; gap: 14px; align-items: center;
-      background: var(--cream); border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; text-decoration: none;
+      display: grid; grid-template-columns: 108px 1fr auto; gap: 16px; align-items: center;
+      background: transparent; border: 0; border-bottom: 1px solid var(--line-soft); border-radius: 0; padding: 14px 0; text-decoration: none;
     }
-    .row img { width: 120px; height: 68px; object-fit: cover; border-radius: 10px; }
-    .row h4 { margin: 0 0 4px; font-size: 16px; font-family: Fraunces, Georgia, serif; font-weight: 500; }
+    .row img { width: 108px; height: 61px; object-fit: cover; border-radius: 4px; }
+    .row h4 { margin: 0 0 4px; font-size: 16px; font-weight: 700; letter-spacing: -.025em; }
     .row p { margin: 0; font-size: 13px; }
-    .jump { background: var(--navy); color: var(--cream); border-radius: 999px; padding: 8px 12px; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+    .jump { background: transparent; color: var(--copper); border-radius: 0; padding: 0; font-size: 12px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; }
     .hidden { display: none !important; }
 
     .grid3, .grid2, .grid4 { display: grid; gap: 14px; margin-top: 22px; }
     .grid3 { grid-template-columns: repeat(3, 1fr); }
     .grid2 { grid-template-columns: repeat(2, 1fr); }
     .grid4 { grid-template-columns: repeat(4, 1fr); }
-    .card { background: var(--cream); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
-    .navy .card { background: var(--navy-2); border-color: rgba(255,255,255,.08); }
-    .stat { font-family: Fraunces, Georgia, serif; font-size: clamp(32px, 4vw, 44px); line-height: 1; color: var(--copper); margin: 0 0 6px; }
-    .navy .stat { color: var(--gold); }
+    .card { background: transparent; border: 0; border-top: 2px solid var(--ink); border-radius: 0; padding: 16px 0 0; }
+    .navy .card { background: transparent; border-top-color: rgba(252,252,250,.85); }
+    .stat { font-family: 'Inter Tight', system-ui, sans-serif; font-weight: 800; font-size: clamp(38px, 4.6vw, 56px); line-height: .9; letter-spacing: -.055em; color: var(--ink); margin: 0 0 8px; }
+    .navy .stat { color: var(--cream); }
     .card small { display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--soft); margin-bottom: 8px; }
     .navy .card small { color: rgba(250,247,241,.55); }
     .card p { margin: 0; font-size: 14px; }
 
-    table { width: 100%; border-collapse: collapse; margin-top: 16px; background: var(--cream); border-radius: 14px; overflow: hidden; }
+    table { width: 100%; border-collapse: collapse; margin-top: 16px; background: transparent; border-top: 2px solid var(--ink); }
     th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 14px; }
-    th { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--copper); font-weight: 500; }
-    .navy table { background: var(--navy-2); }
+    th { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--copper); font-weight: 800; }
+    .navy table { background: transparent; }
     .navy th, .navy td { border-color: rgba(255,255,255,.08); color: rgba(250,247,241,.86); }
 
     .steps { counter-reset: s; display: grid; gap: 10px; margin-top: 18px; }
-    .step { display: grid; grid-template-columns: 44px 1fr; gap: 12px; background: var(--cream); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
-    .step::before { counter-increment: s; content: counter(s); font-family: Fraunces, Georgia, serif; font-size: 26px; color: var(--copper); }
+    .step { display: grid; grid-template-columns: 48px 1fr; gap: 14px; background: transparent; border: 0; border-bottom: 1px solid var(--line-soft); border-radius: 0; padding: 18px 0; }
+    .step::before { counter-increment: s; content: '0' counter(s); font-size: 24px; font-weight: 800; letter-spacing: -.05em; color: var(--copper); }
     .menu { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 18px; }
-    .meal { background: var(--cream); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
-    .meal h4 { margin: 0 0 6px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--copper); }
+    .meal { background: transparent; border: 0; border-top: 1px solid var(--ink); border-radius: 0; padding: 14px 0 0; }
+    .meal h4 { margin: 0 0 6px; font-size: 11px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; color: var(--copper); }
 
-    details { background: var(--cream); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; margin-top: 10px; }
-    .navy details { background: var(--navy-2); border-color: rgba(255,255,255,.08); }
-    summary { cursor: pointer; font-weight: 500; color: var(--ink); }
+    details { background: transparent; border: 0; border-top: 1px solid var(--line); border-radius: 0; padding: 16px 0 4px; margin-top: 10px; }
+    .navy details { background: transparent; border-top-color: rgba(252,252,250,.28); }
+    summary { cursor: pointer; font-weight: 700; letter-spacing: -.02em; color: var(--ink); min-height: 44px; display: flex; align-items: center; }
     .navy summary { color: var(--cream); }
     details p, details li { font-size: 14px; }
 
     .split { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; }
-    .photo { width: 100%; border-radius: 18px; object-fit: cover; aspect-ratio: 4/3; box-shadow: var(--shadow); }
+    .photo { width: 100%; border-radius: 8px; object-fit: cover; aspect-ratio: 4/3; }
 
     .ask {
-      background: linear-gradient(180deg, rgba(28,40,54,.5), rgba(28,40,54,.9)), url("assets/fasting.jpg") center/cover;
+      background: linear-gradient(180deg, rgba(10,10,10,.55), rgba(10,10,10,.92)), url("assets/fasting.jpg") center/cover;
       color: var(--cream); min-height: 62vh; display: grid; align-items: center;
     }
     .ask p { color: rgba(250,247,241,.88); }
     .fine { font-size: 13px; color: rgba(250,247,241,.68); margin-top: 18px; }
     .drop {
-      border: 1.5px dashed rgba(196,165,116,.55); border-radius: 16px; padding: 22px;
+      border: 1.5px dashed rgba(232,164,176,.5); border-radius: 8px; padding: 24px;
       text-align: center; background: rgba(255,255,255,.03); cursor: pointer;
     }
     .drop.on { border-color: var(--gold); background: rgba(196,165,116,.08); }
@@ -138,24 +142,87 @@
     .form-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 16px; }
     label.f { display: grid; gap: 4px; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(250,247,241,.55); }
     label.f input, label.f select {
-      background: #121820; color: var(--cream); border: 1px solid rgba(255,255,255,.12);
-      border-radius: 10px; padding: 10px; font: 15px Outfit, sans-serif;
+      background: #161614; color: var(--cream); border: 1px solid rgba(255,255,255,.16);
+      border-radius: 6px; padding: 12px; font: 15px 'Inter Tight', sans-serif;
     }
     .checks { display: flex; flex-wrap: wrap; gap: 10px 16px; margin: 14px 0; font-size: 14px; }
     .checks label { display: flex; gap: 8px; align-items: center; color: rgba(250,247,241,.85); }
     .result { display: grid; gap: 10px; margin-top: 18px; }
     .dial {
-      background: var(--navy-2); border-left: 4px solid var(--gold); border-radius: 12px; padding: 14px 16px;
+      background: transparent; border-left: 3px solid var(--gold); border-radius: 0; padding: 4px 0 4px 18px;
     }
-    .dial strong { display: block; font-family: Fraunces, Georgia, serif; font-size: 18px; margin-bottom: 4px; }
+    .dial strong { display: block; font-weight: 800; font-size: 18px; letter-spacing: -.03em; margin-bottom: 6px; }
     .found { font-size: 13px; color: var(--gold); margin-top: 8px; }
-    footer { background: #120e0b; color: rgba(250,247,241,.6); padding: 28px 0 40px; font-size: 13px; }
+    footer { background: var(--ink); color: rgba(252,252,250,.5); padding: 40px 0 52px; font-size: 11.5px; line-height: 1.6; }
+    footer p { max-width: 92ch; color: inherit; }
     footer strong { color: var(--cream); }
     @media print {
       nav, .hero, #watch, .cream, #readout, #plan, .ask, footer, .chips, .drop, #labform .actions, .eyebrow { display: none !important; }
       #adapt { background: #fff; color: #111; padding: 0; }
       #adapt h2, .dial strong { color: #111; }
       .dial { border: 1px solid #ddd; background: #fff; color: #111; break-inside: avoid; }
+    }
+
+
+
+    /* ——— The signature device: two arms, opposite directions ——— */
+    .delta { display: grid; gap: 14px; margin: 34px 0 8px; max-width: 780px; }
+    .delta-row { display: grid; grid-template-columns: 150px 1fr 110px; gap: 18px; align-items: center; }
+    .delta-row em { font-style: normal; font-size: 12px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: .09em; color: rgba(252,252,250,.6); line-height: 1.25; }
+    .delta-track { height: 20px; background: rgba(252,252,250,.1); border-radius: 3px; overflow: hidden; }
+    .delta-track span { display: block; height: 100%; background: var(--copper); border-radius: 3px; }
+    .delta-row.control .delta-track span { background: rgba(252,252,250,.32); }
+    .delta-row b { font-size: 26px; font-weight: 800; letter-spacing: -.045em; text-align: right; color: var(--cream); }
+    .delta-row.control b { color: rgba(252,252,250,.55); }
+    .delta-note { font-size: 14px; color: rgba(252,252,250,.6); margin-top: 16px; max-width: 60ch; }
+    @media (max-width: 700px) {
+      .delta-row { grid-template-columns: 96px 1fr 80px; gap: 10px; }
+      .delta-row b { font-size: 19px; }
+      .delta-row em { font-size: 10.5px; }
+    }
+
+    /* ——— Mechanism / minerals / testimonies (added 2026-08-14) ——— */
+    .mech { counter-reset: m; display: grid; gap: 12px; margin-top: 24px; }
+    .mech-row { display: grid; grid-template-columns: 64px 1fr; gap: 20px; align-items: start;
+      background: transparent; border: 0; border-bottom: 1px solid var(--line-soft); border-radius: 0; padding: 24px 0; }
+    .mech:first-of-type .mech-row:first-child { border-top: 1px solid var(--line-soft); }
+    .mech-row .num { font-size: 30px; font-weight: 800; letter-spacing: -.05em; line-height: 1; color: var(--copper); }
+    .mech-row h3 { font-size: 20px; margin: 0 0 6px; }
+    .mech-row p { margin: 0; font-size: 15px; }
+    .pull { font-size: clamp(22px, 3vw, 34px); font-weight: 800; letter-spacing: -.04em; line-height: 1.18;
+      color: var(--ink); border-left: 4px solid var(--copper); padding: 6px 0 6px 24px; margin: 30px 0 0;
+      background: transparent; border-radius: 0; max-width: 24ch; }
+    .navy .pull { color: var(--cream); border-left-color: var(--gold); background: transparent; }
+    .minerals { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 22px; }
+    .min { background: transparent; border: 0; border-top: 1px solid var(--line); border-radius: 0; padding: 18px 0 0; }
+    .navy .min { background: transparent; border-top-color: rgba(252,252,250,.3); }
+    .min .sym { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 6px;
+      background: transparent; border: 1px solid currentColor; color: inherit; font-weight: 800; font-size: 14px; letter-spacing: -.02em; margin-bottom: 14px; }
+    .min h4 { font-weight: 700; font-size: 17px; letter-spacing: -.025em; margin: 0 0 8px; }
+    .navy .min h4 { color: var(--cream); }
+    .min p { margin: 0; font-size: 14px; }
+    .backstop-band { background: var(--ink); color: rgba(252,252,250,.82);
+      border-radius: 10px; padding: 38px 34px; margin-top: 30px; }
+    .backstop-band h3 { font-size: clamp(26px, 3.4vw, 38px); font-weight: 800; letter-spacing: -.045em; line-height: 1.05; color: var(--paper); margin-bottom: 18px; }
+    .backstop-band p { color: rgba(252,252,250,.8); font-size: 15.5px; line-height: 1.65; max-width: 76ch; }
+    .backstop-band .score { border-top: 1px solid rgba(252,252,250,.2); padding-top: 16px; margin-top: 20px;
+      color: var(--gold); font-weight: 600; }
+    .voices { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 22px; }
+    .voice { background: transparent; border: 0; border-left: 3px solid var(--copper); border-radius: 0; padding: 2px 0 2px 20px; }
+    .voice-top { display: block; margin-bottom: 14px; }
+    .voice-av { display: none; }
+    .voice-nm { font-weight: 800; font-size: 19px; letter-spacing: -.03em; margin: 0; color: var(--ink); }
+    .voice-wh { margin: 5px 0 0; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+    .voice p.tale { font-size: 15px; line-height: 1.62; margin: 0 0 14px; }
+    .voice .nums { background: transparent; color: var(--copper); font-weight: 800; font-size: 17px; letter-spacing: -.025em;
+      border-radius: 0; padding: 0; margin: 0 0 14px; }
+    .voice .cav { font-size: 13px; color: var(--faint); border-left: 0; border-top: 1px solid var(--line); padding: 12px 0 0; margin: 0 0 12px; }
+    .voice a.go { font-size: 13.5px; font-weight: 700; color: var(--copper); text-decoration: none; border-bottom: 1px solid #e8ccd2; padding-bottom: 1px; }
+    @media (max-width: 900px) {
+      .minerals, .voices { grid-template-columns: 1fr; }
+      .mech-row { grid-template-columns: 44px 1fr; gap: 12px; padding: 16px; }
+      .backstop-band { padding: 24px 20px; }
     }
 
     @media (max-width: 900px) {
@@ -172,8 +239,10 @@
     <div class="bar">
       <a class="brand" href="#top">Protocol H-90</a>
       <div class="nav-links">
+        <a href="#odds">The bet</a>
+        <a href="#why">Why</a>
         <a href="#watch">Watch</a>
-        <a href="#readout">Data</a>
+        <a href="#days">90 days</a>
         <a href="#plan">Plan</a>
         <a href="#adapt">Your labs</a>
       </div>
@@ -183,17 +252,17 @@
 
   <header class="hero" id="top">
     <div class="hero-inner">
-      <p class="kicker">Why this is the better choice</p>
-      <h1>The default waits for<br>the gland to fail.</h1>
-      <p class="lede">This protocol hunts the cause. Same week of meals you can cook in Carnivore Helper. Watch four clips. Drop in labs. The numbers below are sold in English — not invented percents.</p>
+      <p class="kicker">Hashimoto’s · 90 days · no hormone required to start</p>
+      <h1>The attack can quiet.<br>The data already shows the way.</h1>
+      <p class="lede">If the pill is off the table, this is the cleanest first experiment. In 21 days the usual diet made thyroid antibodies rise. This plate made them fall. In 10 weeks people felt about two-thirds less sick. That is a real shot — not a slogan.</p>
       <div class="actions">
-        <a class="cta gold" href="#watch">Watch the 4</a>
-        <a class="cta ghost" href="#adapt">Drop in bloodwork</a>
+        <a class="cta gold" href="#odds">See why this is a good bet</a>
+        <a class="cta ghost" href="#plan">Start the 90 days</a>
       </div>
       <div class="meta">
-        <span>ADHD layout · short cards</span>
-        <span>Timestamped videos</span>
-        <span>Custom plan from your numbers</span>
+        <span>This link stays up</span>
+        <span>Peer-reviewed sources</span>
+        <span>Print your own lab plan</span>
       </div>
     </div>
   </header>
@@ -213,6 +282,78 @@
           <h3>Trigger out. Tanks full. Then measure.</h3>
           <p>Meat, salt, water. Methylfolate + methyl-B12. Selenium 200 mcg. Protein satiety instead of a food scale. Labs at both ends.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="navy" id="odds">
+    <div class="wrap">
+      <p class="eyebrow">Why this is a good bet for Hashimoto’s</p>
+      <h2>Not a guarantee. A stacked deck in your favor.</h2>
+      <p style="max-width:720px">Nobody can promise a cure. These are the reasons the odds are better than “wait and watch the gland die.”</p>
+      <div class="grid4">
+        <div class="card">
+          <div class="stat">Opposite ways</div>
+          <small>21 days · 180 people</small>
+          <p>This plate: attack markers −44% to −57%. Usual low-calorie diet: markers <em>up</em> 9–30%. Same scale. You are not guessing the direction.</p>
+        </div>
+        <div class="card">
+          <div class="stat">No pill needed</div>
+          <small>34 women · 6 months</small>
+          <p>Krysiak 2019. None were on thyroid hormone. Gluten-free: TPO down ~200. Control: TPO went up. That is the “I cannot take the medicine” lane.</p>
+        </div>
+        <div class="card">
+          <div class="stat">Feel first</div>
+          <small>10 weeks</small>
+          <p>Symptom score 92 → 29. About two-thirds less “I feel sick.” Antibodies can lag. Energy, bloating, and brain often move in the first month. That is how you know to stay.</p>
+        </div>
+        <div class="card">
+          <div class="stat">1 in 4</div>
+          <small>Selenium 200 mcg</small>
+          <p>In one trial, antibodies dropped ~40%. One in four people got back to a normal antibody level. Same capsule sits on this protocol’s counter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" class="cream">
+    <div class="wrap">
+      <p class="eyebrow">The part nobody explains at the appointment</p>
+      <h2>Why Hashimoto&rsquo;s happens in the first place.</h2>
+      <p style="max-width:760px">Five steps. Once you can see them, the food stops looking like a fad and starts looking like the obvious move.</p>
+
+      <div class="mech">
+        <div class="mech-row"><div class="num">01</div><div><h3>You inherit the possibility, not the disease</h3><p>Certain immune genes make this more likely. That part is fixed &mdash; and it is also not a sentence. Plenty of people carry the genes and never get sick. Genes load the gun. They do not pull the trigger.</p></div></div>
+        <div class="mech-row"><div class="num">02</div><div><h3>Something opens the gut wall</h3><p>The lining of the intestine is one cell thick, with junctions between the cells that are supposed to stay shut. Gluten, alcohol, seed oils, chronic stress, infections and some medications loosen them. Food proteins that should have stayed in the gut start reaching the bloodstream, where the immune system has never met them before.</p></div></div>
+        <div class="mech-row"><div class="num">03</div><div><h3>The immune system mistakes your thyroid for the food</h3><p>This is the step that explains everything else. Gliadin &mdash; the protein in gluten &mdash; has a shape strikingly similar to thyroid tissue. Casein, in dairy, is a frequent second offender. The immune system builds a weapon against the food, then finds the same shape on your thyroid and attacks that too. It is called molecular mimicry, and it is why removing the food matters more than any supplement.</p></div></div>
+        <div class="mech-row"><div class="num">04</div><div><h3>The attack itself burns through minerals</h3><p>An immune system running hot is expensive. Inflammation consumes selenium and zinc and locks iron away where you cannot use it. Meanwhile the damaged gut absorbs less of everything. You end up short of the exact minerals the thyroid needs &mdash; which makes the symptoms worse, which gets read as the gland failing rather than the tank being empty.</p></div></div>
+        <div class="mech-row"><div class="num">05</div><div><h3>The thyroid only does about a fifth of the job</h3><p>The gland mostly makes T4, which is storage. The active hormone is T3, and roughly 80% of it is converted elsewhere &mdash; mainly liver and kidney &mdash; by enzymes that need selenium, and processes that need zinc, iron and B vitamins. You can have a working gland, or a correctly dosed pill, and still feel awful if the conversion machinery is short of parts.</p></div></div>
+      </div>
+
+      <p class="pull">The attack burns minerals. The damaged gut absorbs fewer. So you end up short of the exact things the thyroid needs &mdash; and that gets read as the gland failing.</p>
+    </div>
+  </section>
+
+  <section class="navy">
+    <div class="wrap">
+      <p class="eyebrow">So the plate re-mineralizes you</p>
+      <h2>This is the quiet reason meat fits this disease.</h2>
+      <p style="max-width:760px">It is not a cleanse and it is not a personality. It is the densest available source of the four things the attack is spending &mdash; in the form the body absorbs best, without the compounds that block them.</p>
+
+      <div class="minerals">
+        <div class="min"><span class="sym">Se</span><h4>Selenium</h4><p>The thyroid holds more selenium per gram than any other organ, and the enzymes that turn T4 into T3 are selenium-dependent. Beef, lamb, fish and eggs carry it in an absorbable form. 200 mcg dropped antibodies ~40% in trials. Do not megadose &mdash; the window is narrow, and Brazil nuts vary wildly nut to nut.</p></div>
+        <div class="min"><span class="sym">Fe</span><h4>Iron &mdash; the heme advantage</h4><p>Required to build thyroid hormone and to convert it. Low ferritin is the classic reason someone&rsquo;s numbers look treated and they still cannot get off the sofa. Red meat carries heme iron, absorbed several times more readily than plant iron, without the phytates that block it. Get a full panel before supplementing.</p></div>
+        <div class="min"><span class="sym">Zn</span><h4>Zinc</h4><p>Needed by the same conversion enzymes, and it helps the immune system tell self from not-self in the first place. Red meat, shellfish and organ meat are the densest sources there are.</p></div>
+        <div class="min"><span class="sym">B12</span><h4>B12 and the B vitamins</h4><p>Thyroid patients are frequently low &mdash; partly gut damage, partly an overlap with pernicious anaemia. B12 exists in meaningful amounts in animal food and essentially nowhere else. Fatigue and brain fog track this number closely.</p></div>
+      </div>
+
+      <div class="backstop-band">
+        <p class="eyebrow">The one gap food cannot close</p>
+        <h3>And the backstop, in case your body cannot use the cheap version.</h3>
+        <p>Eating this way refills most of the tank on its own &mdash; that is the whole point of a plate built from the densest mineral sources available. The methylated multivitamin covers the gap food cannot close by itself.</p>
+        <p>Here is the specific problem it solves. A large share of people carry a variant in a gene called MTHFR, which means they convert folic acid &mdash; the synthetic form in cheap multivitamins and enriched bread &mdash; poorly or barely at all. If you cannot convert it, it does not just fail to help. Unconverted folic acid builds up, the methylation cycle it was meant to feed stalls, homocysteine climbs &mdash; and high homocysteine is itself inflammatory. The last thing an immune system already attacking your thyroid needs.</p>
+        <p>The fix is not a bigger dose. It is the right form. Methylfolate and methyl-B12 arrive already in the shape the body uses, so the gene variant stops mattering. That cycle then does three jobs at once: clears homocysteine, builds the raw materials for serotonin and dopamine, and makes glutathione &mdash; your own antioxidant, the one protecting mitochondria while the inflammation settles.</p>
+        <p class="score">The scoreboard is homocysteine on a blood test, not a gene-test result. Test it, take the methylated forms for 90 days, test again. If the multi makes you feel wired, take it every other day.</p>
       </div>
     </div>
   </section>
@@ -282,6 +423,7 @@
         <button class="chip" data-f="rogan">Rogan</button>
         <button class="chip" data-f="thyroid">Thyroid</button>
         <button class="chip" data-f="carnivore">Carnivore</button>
+        <button class="chip" data-f="autoimmune">Other autoimmune</button>
         <button class="chip" data-f="fasting">Fasting</button>
       </div>
       <div class="list" id="vlist">
@@ -340,7 +482,7 @@
           <span class="jump">28:09</span>
         </a>
 
-        <a class="row" data-tags="carnivore rogan" href="https://www.youtube.com/watch?v=s8tJ-R28HX8&t=3864s" target="_blank" rel="noopener">
+        <a class="row" data-tags="carnivore rogan autoimmune" href="https://www.youtube.com/watch?v=s8tJ-R28HX8&t=3864s" target="_blank" rel="noopener">
           <img src="https://i.ytimg.com/vi/s8tJ-R28HX8/mqdefault.jpg" alt="">
           <div>
             <h4>JRE #1551 · Paul Saladino · plants flipped his eczema back on</h4>
@@ -376,7 +518,7 @@
           <span class="jump">Full</span>
         </a>
 
-        <a class="row" data-tags="carnivore rogan" href="https://www.youtube.com/watch?v=7fncJdVjy5U" target="_blank" rel="noopener">
+        <a class="row" data-tags="carnivore rogan autoimmune" href="https://www.youtube.com/watch?v=7fncJdVjy5U" target="_blank" rel="noopener">
           <img src="https://i.ytimg.com/vi/7fncJdVjy5U/mqdefault.jpg" alt="">
           <div>
             <h4>JRE clip · Mikhaila Peterson · arthritis gone on beef and water</h4>
@@ -385,7 +527,7 @@
           <span class="jump">Clip</span>
         </a>
 
-        <a class="row" data-tags="carnivore rogan" href="https://www.youtube.com/watch?v=HLF29w6YqXs" target="_blank" rel="noopener">
+        <a class="row" data-tags="carnivore rogan autoimmune" href="https://www.youtube.com/watch?v=HLF29w6YqXs" target="_blank" rel="noopener">
           <img src="https://i.ytimg.com/vi/HLF29w6YqXs/mqdefault.jpg" alt="">
           <div>
             <h4>JRE clip · Jordan Peterson · what the diet did for him</h4>
@@ -394,7 +536,7 @@
           <span class="jump">Clip</span>
         </a>
 
-        <a class="row" data-tags="carnivore thyroid" href="https://www.youtube.com/watch?v=TD7YRSeThp4&t=3288s" target="_blank" rel="noopener">
+        <a class="row" data-tags="carnivore thyroid autoimmune" href="https://www.youtube.com/watch?v=TD7YRSeThp4&t=3288s" target="_blank" rel="noopener">
           <img src="https://i.ytimg.com/vi/TD7YRSeThp4/mqdefault.jpg" alt="">
           <div>
             <h4>Chaffee Q&amp;A · Hashimoto’s antibodies</h4>
@@ -448,6 +590,12 @@
       <p class="eyebrow">Sold in English · published human data</p>
       <h2>The control group got worse. This plate got better.</h2>
       <p>That is the whole pitch. Not a tie. Opposite directions on the same disease markers.</p>
+      <div class="delta">
+        <div class="delta-row"><em>This plate</em><div class="delta-track"><span style="width:44%"></span></div><b>&minus;44%</b></div>
+        <div class="delta-row control"><em>Control diet</em><div class="delta-track"><span style="width:16%"></span></div><b>+16%</b></div>
+      </div>
+      <p class="delta-note">TPO antibodies over the same 21 days, in the same trial. Both groups lost weight. Only one group&rsquo;s antibodies fell &mdash; so weight loss alone did not do this.</p>
+
       <div class="grid4">
         <div class="card"><div class="stat">↓ 44–57%</div><small>Attack markers · 21 days</small><p>Esposito 2016. Meat-forward, no gluten, no dairy. Control diet: antibodies <em>rose</em> 9–30%. Weight loss alone did not do this.</p></div>
         <div class="card"><div class="stat">211 → 89</div><small>TPO in 6 months</small><p>Huang 2024. Less than half the antibody load. MRI: less swelling in the gland. Usual diet: no change.</p></div>
@@ -463,7 +611,100 @@
           <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6592837/" target="_blank">Abbott 2019</a> — AIP, symptoms 92→29, CRP −29%.</li>
           <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8684475/" target="_blank">Lennerz 2021</a> — 2,029 carnivore eaters, BMI 27.2→24.3, 95% felt better.</li>
           <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10951571/" target="_blank">Selenium 2024 review</a> — 200 mcg, TPO often ~40% down.</li>
+          <li><a href="https://www.mdpi.com/2077-0383/15/9/3179" target="_blank">Myo-inositol + selenium 2026</a> — 288 patients. TSH down significantly; TPO <strong>not</strong> moved. Sell it as staying off the pill, not as lowering the attack.</li>
         </ul>
+      </details>
+    </div>
+  </section>
+
+  <section class="cream" id="conditions">
+    <div class="wrap">
+      <p class="eyebrow">Same plate · more diseases</p>
+      <h2>It is not only a thyroid thing.</h2>
+      <p style="max-width:720px">Hashimoto’s has the best published diet numbers, so it leads. But the mechanism — take the trigger out, the attack quiets down — has trials behind it in other autoimmune diseases too. Each card is a different paper.</p>
+
+      <div class="grid4">
+        <div class="card">
+          <small>Crohn’s disease · randomized trial</small>
+          <div class="stat">75.6%</div>
+          <p>Still in remission at 12 weeks on a defined exclusion diet — and it <em>beat</em> the formula-only diet that is already standard care. CRP 23.6 → 5.0. 74 patients.<br><em style="opacity:.7">Levine 2019, Gastroenterology</em></p>
+        </div>
+        <div class="card">
+          <small>IBD · carnivore-keto case series</small>
+          <div class="stat">4,291 → 9</div>
+          <p>Calprotectin, the gut-wall inflammation marker, in one patient. All 10 patients came off IBD medication; remission 5 months to 11 years. Small and self-selected — the authors say so.<br><em style="opacity:.7">Norwitz &amp; Soto-Mota 2024</em></p>
+        </div>
+        <div class="card">
+          <small>Psoriatic arthritis · crossover RCT</small>
+          <div class="stat">−98.6%</div>
+          <p>Joint activity on keto vs −32.6% on the “heart-healthy” Mediterranean plate. Skin −61.6% vs −31.2%. IL-6 down 55.6%. Same people, same calories, both diets.<br><em style="opacity:.7">Int J Mol Sci 2024 · 16 completers</em></p>
+        </div>
+        <div class="card">
+          <small>Multiple sclerosis · randomized</small>
+          <div class="stat">76%</div>
+          <p>Had a clinically meaningful drop in fatigue by week 12 on a meat-and-vegetable elimination diet. 87 people. Fatigue is the symptom drugs help least.<br><em style="opacity:.7">Wahls WAVES trial 2021</em></p>
+        </div>
+      </div>
+
+
+      <p class="eyebrow" style="margin-top:44px">Real people, named, linked</p>
+      <h2>You can go look every one of these up.</h2>
+      <p style="max-width:760px">Named, on the record, and linked to the original interview or paper.</p>
+
+      <div class="voices">
+        <div class="voice">
+          <div class="voice-top"><div class="voice-av">C</div><div><p class="voice-nm">Caitlin Weeks, NC</p><p class="voice-wh">Nutrition consultant &middot; Hashimoto&rsquo;s</p></div></div>
+          <p class="tale">Diagnosed after years of yo-yo dieting and over-exercising. Debilitating fatigue, digestive trouble and joint pain &mdash; while her TSH kept coming back normal. Cutting plant foods calmed the gut symptoms first. She is explicit that food alone was not the whole fix: she also changed how she trained and how she handled stress.</p>
+          <p class="nums">Thyroid antibodies from the 600s into single digits</p>
+          <a class="go" href="https://thyroidpharmacist.com/articles/podcast/ep-84/" target="_blank" rel="noopener">Hear it on Izabella Wentz&rsquo;s podcast, ep. 84 &rarr;</a>
+        </div>
+
+        <div class="voice">
+          <div class="voice-top"><div class="voice-av">N</div><div><p class="voice-nm">Neisha Salas-Berry, RN</p><p class="voice-wh">Registered nurse &middot; Hashimoto&rsquo;s</p></div></div>
+          <p class="tale">Symptoms started at 28 during nursing school: exhausted, depressed, cold all the time, hair thinning, weight on her middle, no libido, could not concentrate. Several doctors put it down to stress and divorce. Thyroid medication alone did nothing. Substantial improvement in the first week of cutting carbs; better again on beef, butter, eggs and bacon.</p>
+          <p class="nums">No antibody titres published &mdash; symptoms and weight only</p>
+          <a class="go" href="https://neishalovesit.blog/?p=3237" target="_blank" rel="noopener">Read it in her own words &rarr;</a>
+        </div>
+
+        <div class="voice">
+          <div class="voice-top"><div class="voice-av">T</div><div><p class="voice-nm">Dr. Terry Wahls, MD</p><p class="voice-wh">Clinical professor &middot; multiple sclerosis</p></div></div>
+          <p class="tale">Diagnosed in 2000; secondary progressive by 2003. After chemotherapy she ended up in a tilt-recline wheelchair because her back muscles could no longer hold her upright &mdash; four years in a chair. December 2007 she started a nutrient-dense elimination diet she designed herself. Within a year she was walking the hospital without a cane and rode an 18-mile bicycle tour. Then she went and ran the randomized trial.</p>
+          <p class="nums">Wheelchair 2003&ndash;2007 &rarr; cycles to work</p>
+          <a class="go" href="https://terrywahls.com/about/" target="_blank" rel="noopener">Read her account &rarr;</a>
+        </div>
+
+        <div class="voice">
+          <div class="voice-top"><div class="voice-av">M</div><div><p class="voice-nm">Mikhaila Peterson</p><p class="voice-wh">On the record &middot; juvenile RA</p></div></div>
+          <p class="tale">Diagnosed with juvenile rheumatoid arthritis as a toddler after her parents noticed how she walked &mdash; the first child in Canada given the biologic Enbrel. Depression and a seasonal rash followed. By her late teens she had had a hip and an ankle replaced. She narrowed her food in stages, finally to beef and water, and reports her white cell count normalized and the symptoms went.</p>
+          <p class="nums">Two joint replacements as a teenager &middot; white cell count normalized</p>
+          <a class="go" href="https://health.selfdecode.com/blog/mikhaila-peterson-why-the-carnivore-diet-helps-autoimmunity/" target="_blank" rel="noopener">Read the background &rarr;</a>
+        </div>
+
+        <div class="voice">
+          <div class="voice-top"><div class="voice-av">V</div><div><p class="voice-nm">Patient &ldquo;VI&rdquo;</p><p class="voice-wh">Published case series &middot; IBD</p></div></div>
+          <p class="tale">One of ten patients written up in a peer-reviewed journal. Started a carnivore-ketogenic diet; the marker for inflammation in the gut wall went from severely elevated to essentially undetectable. Off medication, in remission. Across the series, quality-of-life scores rose 72&ndash;165 points.</p>
+          <p class="nums">Calprotectin 4,291 &rarr; 9 &micro;g/g</p>
+          <a class="go" href="https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1467475/full" target="_blank" rel="noopener">Read the case series &rarr;</a>
+        </div>
+
+        <div class="voice">
+          <div class="voice-top"><div class="voice-av">2</div><div><p class="voice-nm">2,029 people at once</p><p class="voice-wh">Harvard / Boston Children&rsquo;s survey</p></div></div>
+          <p class="tale">Not one story &mdash; the largest modern dataset of long-term meat-only eaters. 369 of them (18%) had an autoimmune diagnosis, and most reported improvement. 95% overall said their health was better.</p>
+          <p class="nums">95% reported better health &middot; BMI 27.2 &rarr; 24.3</p>
+          <a class="go" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8684475/" target="_blank" rel="noopener">Read the paper (Lennerz 2021) &rarr;</a>
+        </div>
+      </div>
+
+
+      <details>
+        <summary>Rheumatoid arthritis — the trial that proved food is the trigger</summary>
+        <p>Kjeldsen-Kragh, <strong>The Lancet, 1991</strong>. 27 diet vs 26 control, randomized, one year. A 7–10 day fast, then foods added back one at a time to find what flared each person. At four weeks the diet group improved on tender joints, swollen joints, pain, morning stiffness, grip strength, ESR and CRP. Controls improved on pain only. The advantage held at one year across every measure.</p>
+        <p>The maintenance diet in this trial was gluten-free vegan, then lactovegetarian. What it establishes is the method — fast, remove, reintroduce one food at a time, keep out what flares. Carnivore is the same move from the opposite starting list; the two have never been run against each other.</p>
+      </details>
+
+      <details>
+        <summary>What each trial actually tested</summary>
+        <p>The Crohn’s trials used a defined exclusion diet that still includes rice, potato and some fruit. The psoriatic arthritis crossover had 16 completers, with both arms calorie-matched. The MS trial compared two elimination diets against each other rather than against an ordinary diet. Across these conditions the evidence for elimination is trial-grade; the evidence for meat-only specifically is case series and one large survey.</p>
       </details>
     </div>
   </section>
@@ -510,6 +751,36 @@
         <div class="card"><div class="stat">27.2→24.3</div><small>Lennerz BMI</small><p>Carnivore survey. High protein. No snack food. Insulin drops.</p></div>
         <div class="card"><div class="stat">Fatty cuts</div><small>Not chicken breast</small><p>Low fat + low carb crashes T3. Salt and fat are the protocol.</p></div>
         <div class="card"><div class="stat">16:8 later</div><small>Not day 1</small><p>Eat enough for 14 days. Then skip breakfast if energy is up. No 72-hour fasts yet.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cream" id="days">
+    <div class="wrap">
+      <p class="eyebrow">What success usually looks like</p>
+      <h2>You will feel it before the lab printout does.</h2>
+      <p style="max-width:720px">Do not judge the 90 days by TPO in week 2. Judge week 2 by bloating, cravings, sleep, and clothes. The papers above match this order.</p>
+      <div class="grid4">
+        <div class="card">
+          <small>Days 1–7</small>
+          <h3>Salt, fat, sleep</h3>
+          <p>Headache or “keto flu” if salt is low. Cravings drop when snack food is gone. This is the refill, not the crash. Eat until full. Fatty cuts only.</p>
+        </div>
+        <div class="card">
+          <small>Days 8–21</small>
+          <h3>The Esposito window</h3>
+          <p>This is when that trial saw antibodies fall 44–57%. You may notice less puffiness, a quieter gut, a clearer head. Take a waist photo. Do not quit here.</p>
+        </div>
+        <div class="card">
+          <small>Days 22–60</small>
+          <h3>Weight and energy</h3>
+          <p>Insulin is down. Fat tissue — an immune organ — starts to shrink. Walk after meals if you can. If energy tanks, you are too lean / too little food. Add fat.</p>
+        </div>
+        <div class="card">
+          <small>Days 61–90</small>
+          <h3>The second blood draw</h3>
+          <p>Repeat TSH, free T3/T4, TPO, ferritin, D, homocysteine. Antibodies may still be falling. Feeling better with a quieter attack is a win even if TPO is not zero.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -586,27 +857,26 @@
         </div>
       </form>
       <div class="result" id="result"></div>
-      <p class="fine">Typical cutoffs, not your lab’s exact range. This is a protocol adapter, not a diagnosis. Take the printout to a clinician.</p>
+      <p class="fine">Uses typical reference cutoffs rather than your lab&rsquo;s exact ranges. Take the printout to your clinician.</p>
     </div>
   </section>
 
   <section class="ask" id="ask">
     <div class="narrow">
       <p class="eyebrow">The offer</p>
-      <h2>Four videos. Your numbers. Ninety days.</h2>
-      <p>This is a clean experiment: meat, salt, water, four supplements, sleep, then a second lab draw. Not a religion. Not a guaranteed cure.</p>
-      <p>Remission is on the table for some people. A quieter immune attack and a smaller waist is already a different life.</p>
+      <h2>Ninety days. Then your own blood tells the story.</h2>
+      <p>Meat, salt, water, four supplements, sleep. Second labs at week 8–12. You do not have to believe this forever. You have to run it once, clean.</p>
+      <p>Bookmark this page. It stays live so you can come back to the videos, the plate, and the lab adapter.</p>
       <div class="actions">
-        <a class="cta gold" href="#adapt">Adapt to my labs</a>
-        <a class="cta" href="#watch">Play video 1</a>
+        <a class="cta gold" href="#plan">Start week 0</a>
+        <a class="cta" href="#adapt">Adapt to my labs</a>
       </div>
-      <p class="fine">Not medical advice. If the gland is already gone, food cannot grow a new one. It can still calm the attack and take inflammatory weight off. Chest pain, fainting, or a crash = a doctor, not less food.</p>
     </div>
   </section>
 
   <footer>
     <div class="wrap">
-      <p><strong>Protocol H-90</strong> · Timestamps checked against JRE #2060 / #2304, Huberman Lab ep. 17, Saladino #1551, Chaffee, Neisha Berry, Jamnadas “Fasting for Survival.” Studies in the Data section. This is a briefing, not a diagnosis.</p>
+      <p><strong>Protocol H-90</strong> &middot; A free educational resource. Study figures are reproduced from the peer-reviewed papers linked throughout; personal accounts are the speakers&rsquo; own and individual results vary. Nothing here is medical care or a substitute for your clinician, and no changes to prescribed medication should be made without one. Timestamps verified against JRE #2060 and #2304, Huberman Lab ep. 17, Saladino #1551, Chaffee, Neisha Berry and Jamnadas.</p>
     </div>
   </footer>
 
@@ -770,3 +1040,4 @@
   </script>
 </body>
 </html>
+
